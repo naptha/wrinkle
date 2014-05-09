@@ -49,6 +49,8 @@ and by childhood, i mean sixth grade reading circles
 
 	sudo make install
 
+	sudo ldconfig
+
 	cd ..
 
 	g++ tessrec.cpp -o tessrec -I/usr/local/include/leptonica -I/usr/local/include/tesseract -ltesseract -llept
