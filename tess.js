@@ -6,6 +6,7 @@ var tmp = require('tmp')
 exports.process = function(path, lang, callback){
 	tmp.tmpName({ postfix: '.tif' }, function(err, tif){
 		exec(['convert', '-type', 'Grayscale', path, tif].join(' '), function(err, stdout, stderr){
+			fs.unlink(path, function(){})
 			if(stderr) return callback(stderr);
 			tmp.tmpName({ postfix: '.txt' }, function(err, charname){
 				if(err) return callback(err);
